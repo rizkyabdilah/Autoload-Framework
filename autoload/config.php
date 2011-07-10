@@ -13,8 +13,8 @@ $config['error_log'] = 1;
 
 //extra config
 $config['site'] = array();
-$config['site']['domain'] = 'http://localhost'; #'http://192.168.22.8';
-$config['site']['title'] = '@Hom Hotel Tambun';
+$config['site']['domain'] = #'http://localhost';
+$config['site']['title'] = 'Site Title';
 
 // auto include file
 $config['autoload_file'] = array();
