@@ -13,29 +13,27 @@ $config['error_log'] = 1;
 
 //extra config
 $config['site'] = array();
-$config['site']['domain'] = #'http://localhost';
-$config['site']['title'] = 'Site Title';
+$config['site']['domain'] = 'http://localhost';
+$config['site']['relative_path'] = '';
+$config['site']['title'] = 'Autoload Framework';
 
 // auto include file
 $config['autoload_file'] = array();
 $config['autoload_file'][] = CORE_PATH.'/AL_Core.php';
 $config['autoload_file'][] = CORE_PATH.'/Error.php';
+$config['autoload_file'][] = CORE_PATH.'/Model.php';
+$config['autoload_file'][] = CORE_PATH.'/MySQLADO.php';
+$config['autoload_file'][] = LIBR_PATH.'/libr.php';
 
 // auto instantiate class
 // key = class name , value = relative path
 $config['autoload_class'] = array();
 $config['autoload_class']['Error'] = 'core/';
 
+//config mysql
+$config['mysql_host'] = 'localhost';
+$config['mysql_user'] = 'root';
+$config['mysql_password'] = '';
+$config['mysql_db'] = 'db';
 
-function site_data($key){
-    global $config;
-    return $config['site'][$key];
-}
-
-function static_url($static_file){
-    return site_data('domain').'/static'.$static_file;
-}
-
-function create_link($uri = ''){
-    return site_data('domain').$uri;
-}
+//app extra config
